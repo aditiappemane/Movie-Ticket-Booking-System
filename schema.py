@@ -39,3 +39,14 @@ class ShowCreate(BaseModel):
 class BookingCreate(BaseModel):
     show_id: int
     seat_ids: List[int]
+
+
+class UserOut(BaseModel):
+    id: int
+    username: str
+    email: str
+    full_name: Optional[str] = None
+    role: Optional[str] = "user"
+
+    class Config:
+        orm_mode = True
